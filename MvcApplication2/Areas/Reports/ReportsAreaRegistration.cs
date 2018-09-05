@@ -17,6 +17,12 @@ namespace MvcApplication2.Areas.Reports
             // R1
             context.MapRoute(
                 name: null,
+                url: "Reports/R1/SaveDocsRetComm/{*pathInfo}",
+                defaults: new { controller = "R1", action = "SaveDocsRetComm" }
+                );
+
+            context.MapRoute(
+                name: null,
                 url: "Reports/R1/GetClientSelector/{*pathInfo}",
                 defaults: new { controller = "R1", action = "GetClientSelector" }
                 );

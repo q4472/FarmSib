@@ -107,9 +107,11 @@ namespace FarmSib.Base.Models
                 case 6: // Родоманченко Наталья Витальевна - отд. кадров
                 case 14: // Максутов Игорь
                 case 26: // Мурзина Татьяна - секретарь
+                case 43: // Малютин М.
                 case 60: // Миловидов Василий Александрович
                 case 63: // Воронов Максим Владимирович - склад
                 case 65: // Мурашова Т. Н. - склад
+                case 66: // Ястребова Елена - зам. Шанина
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения (1)', url: null, cont: [
@@ -120,9 +122,7 @@ namespace FarmSib.Base.Models
                                 { name: 'Расх. ==> Прих.', url: '/ImEx/F0' } ] },
                             { name: 'Заявки', url: null, cont: [
                                 { name: 'Список', url: '/Prep/F0' } ] },
-                            { name: 'Договоры', url: null, cont: [
-                                {name: 'Фарм-Сиб', url: '/Agrs/F0' }, 
-                                {name: 'Гарза', url: '/Agrs/F1' } ] },
+                            { name: 'Договоры', url: '/Agrs/F0', cont: [] },
                             { name: 'Закупки', url: null, cont: [
                                 { name: 'Спецификации', url: null, cont: [
                                     { name: 'Список', url: '/Order/F0' },
@@ -170,7 +170,6 @@ namespace FarmSib.Base.Models
                 case 40: // Легонькова Анастасия - менеджер по продажам - помощник Заваловой Елены (Горинова?)
                 case 41:
                 case 42:
-                case 43:
                 case 44:
                 case 45:
                 case 46:
@@ -188,6 +187,7 @@ namespace FarmSib.Base.Models
                 case 59: // Углова Алёна Александрована - помощник менеджера Корольковой Анны
                 case 61: // Морева Марина - помощник Августовой Ангелины
                 case 62: // Перевалова Юлия Викторовна - менеджер
+                case 64: // Мехрабова
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения (1)', url: null, cont: [
@@ -218,9 +218,7 @@ namespace FarmSib.Base.Models
                             { name: 'Сообщения (1)', url: null, cont: [
                                 { name: 'Обязательные для ознакомления (1)', url: null },
                                 { name: 'Информационные', url: null } ] },
-                            { name: 'Договоры', url: null, cont: [
-                                {name: 'Фарм-Сиб', url: '/Agrs/F0' }, 
-                                {name: 'Гарза', url: '/Agrs/F1' } ] },
+                            { name: 'Договоры', url: '/Agrs/F0', cont: [] },
                             { name: 'Заявки', url: null, cont: [
                                 { name: 'Список', url: '/Prep/F0' } ] },
                             { name: 'Закупки', url: null, cont: [
@@ -246,9 +244,7 @@ namespace FarmSib.Base.Models
                             { name: 'Сообщения (1)', url: null, cont: [
                                 { name: 'Обязательные для ознакомления (1)', url: null },
                                 { name: 'Информационные', url: null } ] },
-                            { name: 'Договоры', url: null, cont: [
-                                {name: 'Фарм-Сиб', url: '/Agrs/F0' }, 
-                                {name: 'Гарза', url: '/Agrs/F1' } ] },
+                            { name: 'Договоры', url: '/Agrs/F0', cont: [] },
                             { name: 'Документы 1с', url: null, cont: [
                                 { name: 'Расходная (трек)', url: '/Docs1c/F0' } ] },
                             { name: 'Отчёты', url: null, cont: [

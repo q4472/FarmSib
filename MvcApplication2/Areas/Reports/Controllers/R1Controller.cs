@@ -1,36 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using FarmSib.Base.Models;
 using MvcApplication2.Areas.Reports.Models;
+using Nskd;
+using System.Data;
 
 namespace MvcApplication2.Areas.Reports.Controllers
 {
     public class R1Controller : Controller
     {
-        public ActionResult Index()
+        public Object Index()
         {
-            R1Model m = new R1Model();
-            return View(m);
+            Object v = null;
+            var m = new R1Model();
+            if (ControllerContext.HttpContext.IsDebuggingEnabled)
+                v = View(m); // _ViewStart.cshtml
+            else
+                v = View(m);
+            return v;
         }
-        public PartialViewResult GetClientSelector(R1Model m)
+        public Object GetClientSelector(R1Model m)
         {
             m.Client.FillClientData();
             m.Client.ClientSelector = "-1";
             return PartialView("ClientSelector", m);
         }
-        public PartialViewResult GetManagerSelector(R1Model m)
+        public Object GetManagerSelector(R1Model m)
         {
             m.Emploee.FillManagerData();
             m.Emploee.ManagerSelector = "-1";
             return PartialView("ManagerSelector", m);
         }
-        public PartialViewResult GetReport(R1Model m)
+        public Object GetReport(R1Model m)
         {
             m.GetReport();
             return PartialView("Report", m);
+        }
+        public Object SaveDocsRetComm()
+        {
+            Object r = "Reports.Controllers.R1Controller.SaveDocsRetComm()\n";
+            RequestPackage rqp = RequestPackage.ParseRequest(Request.InputStream, Request.ContentEncoding);
+            rqp.AddSessionIdToParameters();
+            r += Nskd.JsonV3.ToString(rqp) + "\n";
+            ResponsePackage rsp = rqp.GetResponse("http://127.0.0.1:11012/");
+            DataTable dt = rsp.GetFirstTable();
+            if (dt != null && dt.Columns.Contains("docs_ret_comm") && dt.Rows.Count > 0)
+            {
+                r = dt.Rows[0]["docs_ret_comm"] as String;
+            }
+            return r;
         }
     }
 }
