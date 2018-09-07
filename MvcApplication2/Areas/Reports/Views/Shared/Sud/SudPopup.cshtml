@@ -124,7 +124,7 @@
             $('#sud_panel_stage_id option[value="0"]').prop('selected', true);
             $('#sud_panel_set_of_docs_id option[value="0"]').prop('selected', true);
             $('#sud_panel_payments_status_id option[value="0"').prop('selected', true);
-            //$('#sud_panel_note').text('');
+            //$('#sud_panel_note').val('');
             $('#sud_panel_stage_id').prop('disabled', true);
             $('#sud_panel_set_of_docs_id').prop('disabled', true);
             $('#sud_panel_payments_status_id').prop('disabled', true);
@@ -134,14 +134,14 @@
             $('#sud_panel_stage_id option[value="' + tr.getAttribute('data-sud-stage-id') + '"]').prop("selected", true);
             $('#sud_panel_set_of_docs_id option[value="' + tr.getAttribute('data-sud-set-of-docs-id') + '"]').prop("selected", true);
             $('#sud_panel_payments_status_id option[value="' + tr.getAttribute('data-sud-payments-status-id') + '"]').prop("selected", true);
-            //$('#sud_panel_note').text(tr.getAttribute('data-sud-note'));
+            //$('#sud_panel_note').val(tr.getAttribute('data-sud-note'));
             $('#sud_panel_stage_id').prop('disabled', false);
             $('#sud_panel_set_of_docs_id').prop('disabled', false);
             $('#sud_panel_payments_status_id').prop('disabled', false);
             //$('#sud_panel_note').prop('disabled', false);
         }
         $('#sud_panel_payment_date').val(tr.getAttribute('data-sud-payments-date'));
-        $('#sud_panel_note').text(tr.getAttribute('data-sud-note'));
+        $('#sud_panel_note').val(tr.getAttribute('data-sud-note'));
 
         $('#sud_panel').show().offset({ top: posY, left: posX });
     }
@@ -154,7 +154,7 @@
         var set_of_docs_id = $('#sud_panel_set_of_docs_id :selected').val();
         var payments_status_id = $('#sud_panel_payments_status_id :selected').val();
         var payment_date = escape($('#sud_panel_payment_date').val());
-        var note = escape($('#sud_panel_note').text());
+        var note = escape($('#sud_panel_note').val());
         var agreement_id = escape($('#sud_panel_agreement_id').val());
         var agreement_cascade = $('#sud_punel_agreement_cascade')[0].checked;
         var bill_list = escape($('#sud_panel_bill_list').val());
@@ -185,7 +185,7 @@
             $('#sud_panel_stage_id option[value=0]').prop('selected', true);
             $('#sud_panel_set_of_docs_id option[value=0]').prop('selected', true);
             $('#sud_panel_payments_status_id option[value=0]').prop('selected', true);
-            $('#sud_panel_note').text('');
+            $('#sud_panel_note').val('');
             $('#sud_panel_stage_id').prop('disabled', true);
             $('#sud_panel_set_of_docs_id').prop('disabled', true);
             $('#sud_panel_payments_status_id').prop('disabled', true);
@@ -201,10 +201,10 @@
         el.value = Nskd.Validator.dateNorm(el.value);
         $('#sud_punel_agreement_cascade').prop('checked', false);
         var note = $('#sud_panel_note');
-        var text = note.text();
+        var text = note.val();
         if (text.indexOf('Срок оплаты установлен вручную.') < 0) {
-            if (text) { note.text(text + ' Срок оплаты установлен вручную.'); }
-            else { note.text('Срок оплаты установлен вручную.'); }
+            if (text) { note.val(text + ' Срок оплаты установлен вручную.'); }
+            else { note.val('Срок оплаты установлен вручную.'); }
         }
     }
 </script>
