@@ -170,13 +170,13 @@
             var specId = $('#p_order_f0_current_id').val();
             var rqp = {
                 SessionId: Nskd.Server.SessionId,
-                Command: 'Order.F0.GoToShedTable',
+                Command: 'GoToDeliverySchedule',
                 Parameters: [{ Name: 'id', Value: specId }]
             };
-            var data = Nskd.Json.toString(rqp);
+            //var data = Nskd.Json.toString(rqp);
             //alert(data); return;
             Nskd.Http.post({
-                url: '/Order/F3',
+                url: '/DeliverySchedule/F3',
                 rqp: rqp,
                 done: function (data) {
                     //alert(data);
