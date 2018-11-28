@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Mvc;
 using FarmSib.Base.Data;
 
@@ -126,7 +121,8 @@ namespace FarmSib.Base.Models
                             { name: 'Закупки', url: null, cont: [
                                 { name: 'Спецификации', url: null, cont: [
                                     { name: 'Список', url: '/Order/F0' },
-                                    { name: 'Загрузка', url: '/Order/F3' } ] },
+                                    { name: 'Загрузка', url: '/Order/F3' },
+                                    { name: 'Зачёты', url: '/AdminPages/F0' } ] },
                                 { name: 'Уведомления', url: null } ] },
                             { name: 'Документы', url: null, cont: [
                                 { name: 'РУ', url: '/Docs/Rd' },
