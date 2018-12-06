@@ -109,8 +109,8 @@ namespace FarmSib.Base.Models
                 case 66: // Ястребова Елена - зам. Шанина
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: '/Mess/F0' },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Документы 1с', url: null, cont: [
                                 { name: 'Расходная (трек)', url: '/Docs1c/F0' },
@@ -187,8 +187,8 @@ namespace FarmSib.Base.Models
                 case 67: // Барабина Олеся - менеджер по продажам - помощник Сущевой Ольги
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Заявки', url: null, cont: [
                                 { name: 'Список', url: '/Prep/F0' } ] },
@@ -212,8 +212,8 @@ namespace FarmSib.Base.Models
                 case 34: // Егорова Евгения Валерьевна - тендерный отдел
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Договоры', url: '/Agrs/F0', cont: [] },
                             { name: 'Заявки', url: null, cont: [
@@ -238,8 +238,8 @@ namespace FarmSib.Base.Models
                 case 20: // Потекаева Ирина Ивановна - юр. отдел
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Договоры', url: '/Agrs/F0', cont: [] },
                             { name: 'Документы 1с', url: null, cont: [
@@ -255,8 +255,8 @@ namespace FarmSib.Base.Models
                 case 12: // Баризова Наталья - секретарь
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Документы 1с', url: null, cont: [
                                 { name: 'Расходная (трек)', url: '/Docs1c/F0' } ] },
@@ -266,8 +266,8 @@ namespace FarmSib.Base.Models
                 case 54: // Михайлова Анна Андреевна - ассистент отдела закупок
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
-                            { name: 'Сообщения (1)', url: null, cont: [
-                                { name: 'Обязательные для ознакомления (1)', url: null },
+                            { name: 'Сообщения', url: null, cont: [
+                                { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
                             { name: 'Документы', url: null, cont:[
                                 { name: 'РУ', url: '/Docs/Rd' },
