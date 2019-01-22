@@ -124,6 +124,8 @@ namespace FarmSib.Base.Models
                                     { name: 'Загрузка', url: '/Order/F3' },
                                     { name: 'Зачёты', url: '/AdminPages/F0' } ] },
                                 { name: 'Уведомления', url: null } ] },
+                            { name: 'Снабжение', url: null, cont:[
+                                { name: 'Товары', url: '/Supply/F0' } ] },
                             { name: 'Документы', url: null, cont: [
                                 { name: 'РУ', url: '/Docs/Rd' },
                                 { name: 'СТ-1', url: '/Docs/Ct' } ] },
