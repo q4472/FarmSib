@@ -169,7 +169,6 @@ namespace FarmSib.Base.Models
                 case 41:
                 case 42: // Баризова Н - менеджер по продажам - помощник Сущевой Ольги
                 case 44:
-                case 45:
                 case 46:
                 case 47:
                 case 48:
@@ -265,12 +264,15 @@ namespace FarmSib.Base.Models
                             { name: 'Настройки', url: '/Settings/F0' } ]
                         }";
                     break;
+                case 45: // Синенок Ю. - закупка
                 case 54: // Михайлова Анна Андреевна - ассистент отдела закупок
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения', url: null, cont: [
                                 { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
+                            { name: 'Снабжение', url: null, cont:[
+                                { name: 'Товары', url: '/Supply/F0' } ] },
                             { name: 'Документы', url: null, cont:[
                                 { name: 'РУ', url: '/Docs/Rd' },
                                 { name: 'СТ-1', url: '/Docs/Ct' } ] },
