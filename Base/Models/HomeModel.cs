@@ -175,8 +175,8 @@ namespace FarmSib.Base.Models
                 case 48:
                 case 49:
                 case 50:
-                case 51:
-                case 52:
+                case 51: // Кочкурова Е. - склад
+                case 52: // Саблина Л. - склад
                 case 53:
                 case 55: // Паннафидина Екатерина - помощник менеджера Ерастовой Людмилы
                 case 56: // Серкерова
@@ -192,6 +192,9 @@ namespace FarmSib.Base.Models
                             { name: 'Сообщения', url: null, cont: [
                                 { name: 'Обязательные для ознакомления', url: null },
                                 { name: 'Информационные', url: null } ] },
+                            { name: 'Документы 1с', url: null, cont: [
+                                { name: 'Расходная (трек)', url: '/Docs1c/F0' },
+                                { name: 'Расх. ==> Прих.', url: '/ImEx/F0' } ] },
                             { name: 'Заявки', url: null, cont: [
                                 { name: 'Список', url: '/Prep/F0' } ] },
                             { name: 'Закупки', url: null, cont: [

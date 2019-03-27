@@ -67,10 +67,8 @@
         <tr><td><input type="button" value="Перейти к таблице спецификации" data-spec-id="" disabled="disabled" onclick="OrderF0Command.goToSpecButtonClick();" /></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td><input type="button" value="Перейти к графику поставок" data-spec-id="" disabled="disabled" onclick="OrderF0Command.goToShedButtonClick();" /></td></tr>
-        <!--
         <tr><td>&nbsp;</td></tr>
         <tr><td><input type="button" value="Расчитать цены продажи" data-spec-id="" disabled="disabled" onclick="OrderF0Command.calcButtonClick();" /></td></tr>
-        -->
     </table>
     <!-- Модальное окно -->
     <div class="modal">
@@ -180,11 +178,7 @@
 
         var dp = mainDiv.find('input.date-selector');
         dp.width(60);
-        dp.datepicker({
-            dateFormat: 'dd.mm.y',
-            firstDay: 1,
-            defaultDate: 0
-        });
+        dp.datepicker({ dateFormat: 'dd.mm.y', firstDay: 1 });
 
         // Модальное окно
         var modalDiv = mainDiv.find('div.modal');

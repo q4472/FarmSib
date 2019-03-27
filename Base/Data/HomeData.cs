@@ -1052,49 +1052,6 @@ namespace FarmSib.Base.Data
                 }
                 return r;
             }
-            public static DataTable F1GetGoodsItems(String[] srcs, String mnn, String value)
-            {
-                DataTable dt = null;
-                RequestPackage rqp = new RequestPackage();
-                rqp.Command = "[dbo].[товары]";
-                rqp.Parameters = new RequestParameter[] {
-                    new RequestParameter("src1", srcs[0] ),
-                    new RequestParameter("src2", srcs[1] ),
-                    new RequestParameter("src3", srcs[2] ),
-                    new RequestParameter("src4", srcs[3] ),
-                    new RequestParameter("src5", srcs[4] ),
-                    new RequestParameter("mnn", mnn ),
-                    new RequestParameter("descr", value )
-                };
-                dt = GetFirstTable(Execute(rqp));
-                return dt;
-            }
-            public static DataSet F1SaveShedule(Int32 id, DataTable shedule)
-            {
-                DataSet ds = null;
-
-                RequestPackage rqp = new RequestPackage();
-                rqp.Command = "[dbo].[спецификации_к_контракту_график_delete]";
-                rqp.Parameters = new RequestParameter[] {
-                    new RequestParameter("код_спецификации", id )
-                };
-                Execute(rqp);
-
-                rqp.Command = "[dbo].[спецификации_к_контракту_график_insert]";
-                for (int ri = 0; ri < shedule.Rows.Count; ri++)
-                {
-                    DataRow dr = shedule.Rows[ri];
-                    rqp.Parameters = new RequestParameter[shedule.Columns.Count];
-                    int pi = 0;
-                    for (int ci = 0; ci < shedule.Columns.Count; ci++)
-                    {
-                        rqp.Parameters[pi++] = new RequestParameter(shedule.Columns[ci].ColumnName, dr[ci]);
-                    }
-                    Execute(rqp);
-                }
-
-                return ds;
-            }
             public static DataSet GetXlsTables(Stream fileStream)
             {
                 DataSet ds = null;
