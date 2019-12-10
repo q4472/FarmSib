@@ -107,6 +107,8 @@ namespace FarmSib.Base.Models
                 case 63: // Воронов Максим Владимирович - склад
                 case 65: // Мурашова Т. Н. - склад
                 case 66: // Ястребова Елена - зам. Шанина
+                case 70: // Золкина (с правами как у Шанина Г.)
+                case 71: // Админ (полные права, полный интерфейс)
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения', url: null, cont: [
@@ -241,6 +243,8 @@ namespace FarmSib.Base.Models
                 case 9: // Бельченко Юлия Викторовна - юр. отдел
                 case 10: // Федущак Роман Владимирович - юр. отдел
                 case 20: // Потекаева Ирина Ивановна - юр. отдел
+                case 68: // Митюшина Е. (с правами как у Потекаевой)
+                case 69: // Кашуркина А. (с правами как у Потекаевой)
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения', url: null, cont: [

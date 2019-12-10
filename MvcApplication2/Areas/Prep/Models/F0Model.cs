@@ -29,11 +29,12 @@ namespace MvcApplication2.Areas.Prep.Models
         }
         public F0Model(String sessionId) // конструктор для захода с другой страницы или из меню
         {
+            Guid.TryParse(sessionId, out Guid sid);
             // пытаемся восстановить значение фильтра из параметров среды
             // результат записываем в параметры запроса на обновление и в список полей для фильтра на странице
             RequestPackage rqp = new RequestPackage
             {
-                SessionId = new Guid(sessionId),
+                SessionId = sid,
                 Parameters = new RequestParameter[] {
                     new RequestParameter { Name = "pattern", Value = @"^prep_f0_filter\..*" }
                 }
