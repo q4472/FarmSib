@@ -189,7 +189,7 @@ namespace MvcApplication2.Areas.Prep.Models
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
 
-            List<String> auctionNumbers = new List<String>(); //ZakupkiGovRu.GetAuctionNumbersByRegion(regionNumber, publishDate);
+            List<String[]> auctionNumbers = new List<String[]>(); //ZakupkiGovRu.GetAuctionNumbersByRegion(regionNumber, publishDate);
 
             if (rsp != null && rsp.Data != null && rsp.Data.Tables.Count > 0)
             {
@@ -198,12 +198,12 @@ namespace MvcApplication2.Areas.Prep.Models
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        auctionNumbers.Add(dr[0] as String);
+                        auctionNumbers.Add(new String[] { dr[0] as String, dr[1] as String });
                     }
                 }
             }
 
-            auctionNumbers.Add(sessionId.ToString());
+            auctionNumbers.Add(new String[] { sessionId.ToString() });
             Thread lbns = new Thread(ThreadLoadByNumbers);
             lbns.Start(auctionNumbers);
 
@@ -211,12 +211,12 @@ namespace MvcApplication2.Areas.Prep.Models
         }
         public static void ThreadLoadByNumbers(Object auctionNumbers)
         {
-            List<String> ans = (List<String>)auctionNumbers;
-            Guid sessionId = new Guid(ans[ans.Count - 1]);
+            List<String[]> ans = (List<String[]>)auctionNumbers;
+            Guid sessionId = new Guid(ans[ans.Count - 1][0]);
             ans.RemoveAt(ans.Count - 1);
-            foreach (String an in ans)
+            foreach (String[] an in ans)
             {
-                LoadAuctionInf(sessionId, an, 1);
+                LoadAuctionInf(sessionId, an[0], 1);
                 Thread.Sleep(10000);
             }
         }
