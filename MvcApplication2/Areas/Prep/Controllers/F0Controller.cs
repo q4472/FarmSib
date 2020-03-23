@@ -83,7 +83,8 @@ namespace MvcApplication2.Areas.Prep.Controllers
                         r = F0Command.ExistsAuctionInf(rqp.SessionId, rqp["auctionNumber"] as String);
                         break;
                     case "Prep.F0.LoadAuctionInf":
-                        r = F0Command.LoadAuctionInf(rqp.SessionId, rqp["auctionNumber"] as String, specHeadType);
+                        String auctionHref = null;
+                        r = F0Command.LoadAuctionInf(rqp.SessionId, rqp["auctionNumber"] as String, auctionHref, specHeadType);
                         break;
                     case "Prep.F0.LoadByRegion":
                         r = F0Command.LoadByRegion(rqp.SessionId, rqp["regionNumber"] as String, rqp["publishDate"] as String);

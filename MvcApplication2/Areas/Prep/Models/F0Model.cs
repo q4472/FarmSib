@@ -155,12 +155,12 @@ namespace MvcApplication2.Areas.Prep.Models
             Boolean r = HomeData.Prep.ExistsAuctionInf(sessionId, auctionNumber);
             return r;
         }
-        public static String LoadAuctionInf(Guid sessionId, String auctionNumber, Int32 specHeadType)
+        public static String LoadAuctionInf(Guid sessionId, String auctionNumber, String auctionHref, Int32 specHeadType)
         {
             Guid? aUid = null;
             if (!String.IsNullOrWhiteSpace(auctionNumber))
             {
-                aUid = LoadAuction(sessionId, auctionNumber, true);
+                aUid = LoadAuction(sessionId, auctionNumber, auctionHref, true);
                 if (aUid != null)
                 {
                     // сохранить данные об аукционе
@@ -216,7 +216,7 @@ namespace MvcApplication2.Areas.Prep.Models
             ans.RemoveAt(ans.Count - 1);
             foreach (String[] an in ans)
             {
-                LoadAuctionInf(sessionId, an[0], 1);
+                LoadAuctionInf(sessionId, an[0], an[1], 1);
                 Thread.Sleep(10000);
             }
         }
@@ -225,7 +225,7 @@ namespace MvcApplication2.Areas.Prep.Models
             String r = HomeData.Prep.PassToTender(sessionId, auctionNumber);
             return r;
         }
-        private static Guid? LoadAuction(Guid sessionId, String auctionNumber, Boolean overwrite)
+        private static Guid? LoadAuction(Guid sessionId, String auctionNumber, String auctionHref, Boolean overwrite)
         {
             Guid? aUid = null;
 
@@ -236,6 +236,7 @@ namespace MvcApplication2.Areas.Prep.Models
                 Parameters = new RequestParameter[]
                 {
                     new RequestParameter { Name = "auction_number", Value = auctionNumber },
+                    new RequestParameter { Name = "auction_href", Value = auctionHref },
                     new RequestParameter { Name = "overwrite", Value = overwrite }
                 }
             };
