@@ -140,7 +140,8 @@ namespace FarmSib.Base.Models
                                 { name: 'Обеспечение', url: null, cont: [
                                     { name: 'Долги по клиентам', url: 'Deposits/F0' },
                                     { name: 'Расчеты по аукционам', url: 'Deposits/F1' } ] },
-                                { name: 'МДВ1', url: '/MDVReports/F0' } ] },
+                                { name: 'МДВ1', url: '/MDVReports/F0' },
+                                { name: 'МДВ2', url: '/MDVReports/F1' } ] },
                             { name: 'Номенклатура', url: null, cont: [
                                 { name: 'Препараты', url: '/Items/Search' },
                                 { name: 'Группы', url: '/Items/Groups' } ] },
