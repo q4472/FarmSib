@@ -131,7 +131,7 @@ namespace FarmSib.Base.Models
                             { name: 'Снабжение', url: null, cont:[
                                 { name: 'Товары', url: '/Supply/F0' } ] },
                             { name: 'Документы', url: null, cont: [
-                                { name: 'РУ', url: '/Docs/Rd' },
+                                { name: 'РУ', url: '/rd/index' },
                                 { name: 'СТ-1', url: '/Docs/Ct' } ] },
                             { name: 'Отчёты', url: null, cont: [
                                 { name: 'Неоплаченные отгрузки', url: '/Reports/R1' },
@@ -285,7 +285,7 @@ namespace FarmSib.Base.Models
                             { name: 'Снабжение', url: null, cont:[
                                 { name: 'Товары', url: '/Supply/F0' } ] },
                             { name: 'Документы', url: null, cont:[
-                                { name: 'РУ', url: '/Docs/Rd' },
+                                { name: 'РУ', url: '/rd/index' },
                                 { name: 'СТ-1', url: '/Docs/Ct' } ] },
                             { name: 'Препараты', url: '/Items/Search' },
                             { name: 'Настройки', url: '/Settings/F0' } ]
