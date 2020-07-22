@@ -192,6 +192,7 @@ namespace FarmSib.Base.Models
                 case 62: // Перевалова Юлия Викторовна - менеджер
                 case 64: // Мехрабова
                 case 67: // Барабина Олеся - менеджер по продажам - помощник Сущевой Ольги
+                case 74: // Утяшина Оксана - менеджер Пирожкова
                     JsonUserMainMenu = @"
                         { name: '" + session.UserName + @"', url: null, cont: [
                             { name: 'Сообщения', url: null, cont: [
