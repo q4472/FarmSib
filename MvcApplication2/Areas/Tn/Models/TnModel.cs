@@ -42,7 +42,7 @@ namespace MvcApplication2.Areas.Tn.Models
             String regNr = null;
             String hfIdReg = null;
             UriBuilder b = new UriBuilder();
-            b.Scheme = "http";
+            b.Scheme = "https";
             b.Host = "grls.rosminzdrav.ru";
 
             // для запроса инструкций нужно знать два параметра regNr и hfIdReg
@@ -106,6 +106,7 @@ namespace MvcApplication2.Areas.Tn.Models
                 b.Path = "/GRLS_View_V2.aspx/AddInstrImg";
                 b.Query = "";
                 String body = "{regNumber: '" + regNr + "'" + ", idReg: '" + hfIdReg + "'}";
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 r = GetResponse(b.Uri, "POST", body);
             }
             return r;
