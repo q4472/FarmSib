@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -141,6 +142,18 @@ namespace MvcApplication2.Areas.Tn.Models
                     break;
             }
 
+            /*
+             * System.Net.WebException: Запрос был прерван:
+             * Не удалось создать защищенній канал SSL/TLS. 
+             * в System.Net.HttpWebRequest.GetResponse()
+            */
+            request.Credentials = CredentialCache.DefaultCredentials;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            ServicePointManager.ServerCertificateValidationCallback += AcceptAllCertificatePolicy;
+
+            //2022-02-05
+
+
             HttpWebResponse response = null;
             try
             {
@@ -158,6 +171,13 @@ namespace MvcApplication2.Areas.Tn.Models
             }
             return result;
         }
+
+        // просто делегат возращающий всегда true
+        public static bool AcceptAllCertificatePolicy(object sender, X509Certificate certificate, X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
+        }
+        //2022-02-05
 
     }
 }

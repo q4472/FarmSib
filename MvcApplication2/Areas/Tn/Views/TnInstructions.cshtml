@@ -23,7 +23,7 @@
         position: relative;
         clear: both;
         float: left;
-        width: 10%;
+        width: 80%;
         z-index: 1;
         padding: 15px 0 0 !important;
         overflow: auto;
@@ -150,9 +150,11 @@
                                     }
                                 }
                                 if (url.indexOf(".pdf") != -1) {
-                                    html_for_icons.append("<li><a href='" + url + "'><img src='" + url + "'/gfx/ext/pdf_large.jpg'></a></li>");
+                                    //html_for_icons.append("<li><a href='" + url + "'><img src='" + url + "'/gfx/ext/pdf_large.jpg'></a></li>");
+                                    html_for_icons.append("<div><a href='" + url + "' target='_blank'>" + url + "</a></div>");
                                 } else {
-                                    html_for_icons.append("<li><a href='" + url + "'><img src='" + url + "'></a></li>");
+                                    //html_for_icons.append("<li><a href='" + url + "'><img src='" + url + "'></a></li>");
+                                    html_for_icons.append("<div><a href='" + url + "' target='_blank'>" + url + "</a></div>");
                                 }
                             }
                             icons_block.append(html_for_icons);
@@ -180,14 +182,14 @@
         }
 
         if (names_selector.find("option").length > 0) {
-
+            /*
             icons_block.find('ul:eq(0) li:eq(0)').is(function () {
                 $(this).addClass('on').siblings('li').removeClass('on');
                 var link_href = $(this).children('a').attr('href');
                 preview_block.eq(0).html("<img src='" + link_href + "' onclick=\"window.open('" + link_href + "')\" target='_blank'></img>");
                 width_ul_func();
             });
-
+            */
             names_selector.on('change', function () {
                 var n = $(this).find('option:selected').index();
                 icons_block.find('ul').hide().eq(n).show().find('li:eq(0)').is(function () {
@@ -204,7 +206,7 @@
                 });
                 return false;
             });
-
+            /*
             icons_block.find('a').on('click', function () {
                 var jPreview = preview_block.eq(0);
                 if ($(this).attr('href').indexOf(".pdf") == -1) {
@@ -220,7 +222,7 @@
                 });
                 return false;
             });
-
+            */
             $(window).on("resize", function () {
                 setTimeout(width_ul_func(), 1000);
             });
